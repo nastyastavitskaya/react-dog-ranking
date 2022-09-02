@@ -1,4 +1,4 @@
-# See how my favourite dog breeds popularity rank changed for the last few years!
+# Here you can check the popularity rank of 6 of my favorite dogs.
 
 Project build on React, with styled-components and Highcharts.
 
