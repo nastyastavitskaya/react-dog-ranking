@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Card from '../Card';
 import AllDogsChart from '../charts/AllDogsChart';
 
-import { mediaQueryTablet } from '../../styles/mixins';
 
 const Root = styled.div`
   margin-top: 64px;

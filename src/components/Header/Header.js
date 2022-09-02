@@ -9,7 +9,6 @@ import {
 
 import ResponsiveContainer from '../containers/ResponsiveContainer';
 import Dropdown from '../Dropdown/Dropdown';
-// import Option from './Dropdown';
 
 
 const Header = ({
@@ -35,13 +34,6 @@ const Header = ({
               onDropdownClick={onDropdownClick}
               onOptionClick={onOptionClick}
             />
-              {/* {allDogs.map(dog => (
-                <Option
-                  value={dog.id}
-                  label={dog.name}
-                />
-              ))}
-            </Dropdown> */}
           </DropdownWrapper>
         </Container>
       </ResponsiveContainer>

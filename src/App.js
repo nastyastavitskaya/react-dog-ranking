@@ -46,22 +46,22 @@ function App() {
   };
 
   return (
-      <AppContainer>
-         <Header
-          selectedDog={selectedDog}
-          allDogs={allDogs}
-          isDropdownOpen={isDropdownOpen}
-          dropdownRef={dropdownRef}
-          onDropdownClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          onOptionClick={handleOptionClick}
-        />
-        <RootContainer
-          years={years}
-          selectedDog={selectedDog}
-          allDogs={allDogs}
-        />
-        <Footer />  
-      </AppContainer>
+    <AppContainer>
+      <Header
+        selectedDog={selectedDog}
+        allDogs={allDogs}
+        isDropdownOpen={isDropdownOpen}
+        dropdownRef={dropdownRef}
+        onDropdownClick={() => setIsDropdownOpen(!isDropdownOpen)}
+        onOptionClick={handleOptionClick}
+      />
+      <RootContainer
+        years={years}
+        selectedDog={selectedDog}
+        allDogs={allDogs}
+      />
+      <Footer />  
+    </AppContainer>
   );
 }
 

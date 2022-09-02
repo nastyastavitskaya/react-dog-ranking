@@ -57,4 +57,3 @@ export const DogImg = styled.img`
   border-radius: 50%;
   margin-right: 8px;
 `;
-
