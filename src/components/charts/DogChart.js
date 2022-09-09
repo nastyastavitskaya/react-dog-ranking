@@ -67,4 +67,4 @@ const DogChart = ({ years, dogRating }) => {
   )
 }
 
-export default DogChart
+export default DogChart;

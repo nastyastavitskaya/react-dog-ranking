@@ -6,8 +6,8 @@ import HighchartsReact from 'highcharts-react-official';
 const AllDogsChart = ({ allDogs, years }) => {
   let result = [];
     
-  [...allDogs].map(d => {
-    const newItemObj = { name: d.name, data: d.rating };
+  [...allDogs].map(dog => {
+    const newItemObj = { name: dog.name, data: dog.rating };
     return result.push(newItemObj);
   });
 

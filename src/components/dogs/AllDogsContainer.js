@@ -22,4 +22,4 @@ const AllDogsContainer = ({ allDogs, years }) => {
   )
 }
 
-export default AllDogsContainer
+export default AllDogsContainer;

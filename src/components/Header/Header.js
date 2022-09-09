@@ -19,7 +19,6 @@ const Header = ({
   dropdownRef,
   onDropdownClick,
   onOptionClick,
-  // onSetIsAllDogsSelected,
 }) => {
   return (
     <Root>

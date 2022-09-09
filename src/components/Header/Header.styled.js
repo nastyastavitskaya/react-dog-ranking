@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
 export const Root = styled.header`
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // right: 0;
   min-height: 64px;
   padding: 12px 0;
   background-color: #fff;
