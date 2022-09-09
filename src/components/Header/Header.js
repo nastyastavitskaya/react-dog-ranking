@@ -9,15 +9,17 @@ import {
 
 import ResponsiveContainer from '../containers/ResponsiveContainer';
 import Dropdown from '../Dropdown/Dropdown';
+import DropdownOption from '../Dropdown/DropdownOption';
 
 
 const Header = ({
   allDogs,
-  selectedDog,
+  selected,
   isDropdownOpen,
   dropdownRef,
   onDropdownClick,
-  onOptionClick
+  onOptionClick,
+  // onSetIsAllDogsSelected,
 }) => {
   return (
     <Root>
@@ -26,14 +28,26 @@ const Header = ({
           <Heading>How popular is the dog?</Heading>
           <DropdownWrapper>
             <Dropdown
-              label='All dogs'
-              selectedText={selectedDog.name}
-              options={allDogs}
+              label={selected.isAllSelected ? 'All dogs' : selected.dog.name}
+              selectedText={selected.dog.name}
               isDropdownOpen={isDropdownOpen}
               dropdownRef={dropdownRef}
               onDropdownClick={onDropdownClick}
-              onOptionClick={onOptionClick}
-            />
+            >
+              <DropdownOption
+                text='All dogs'
+                value={selected.isAllSelected}
+                onClick={() => onOptionClick({ dog: '', isAllSelected: true })}
+              />
+              {allDogs.map(dog => (
+                <DropdownOption
+                  key={dog.id}
+                  value={dog}
+                  text={dog.name}
+                  onClick={() => onOptionClick({ dog: dog, isAllSelected: false })}
+                />
+              ))}
+            </Dropdown>
           </DropdownWrapper>
         </Container>
       </ResponsiveContainer>

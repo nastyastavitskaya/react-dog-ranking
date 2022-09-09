@@ -7,20 +7,15 @@ import {
   DropdownContainer,
   DropdownListContainer,
   DropdownList,
-  DropdownListItem
 } from './Dropdown.styled';
-
-// import Option from './dropdown/Option';
 
 
 const Dropdown = ({
   isDropdownOpen,
   dropdownRef,
   label,
-  options,
-  selectedText,
-  onDropdownClick,
-  onOptionClick
+  children,
+  onDropdownClick
 }) => {
   return (
     <Root ref={dropdownRef}>
@@ -28,20 +23,13 @@ const Dropdown = ({
         isDropdownOpen={isDropdownOpen}
         onClick={onDropdownClick}
       >
-        {selectedText ? selectedText : label}
+        {label}
         <BiChevronDown />
       </DropdownContainer>
       {isDropdownOpen && (
         <DropdownListContainer>
           <DropdownList>
-            {options.map(option => (
-              <DropdownListItem
-                key={option.id}
-                onClick={() => onOptionClick((option))}
-              >
-                {option.name}
-              </DropdownListItem>
-            ))}
+            {children}
           </DropdownList>
         </DropdownListContainer>
       )}
@@ -52,9 +40,7 @@ const Dropdown = ({
 Dropdown.propTypes = {
   isDropdownOpen: PropTypes.bool,
   label: PropTypes.string,
-  options: PropTypes.array.isRequired,
   onDropdownClick: PropTypes.func.isRequired,
-  onOptionClick: PropTypes.func.isRequired,
 };
 
 Dropdown.defaultProps = {

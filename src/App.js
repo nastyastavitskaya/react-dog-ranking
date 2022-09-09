@@ -21,7 +21,7 @@ function App() {
   const allDogs = dogs;
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedDog, setSelectedDog] = useState('');
+  const [selected, setSelected] = useState({ dog: '', isAllSelected: true })
 
   const dropdownRef = useRef();
 
@@ -41,14 +41,14 @@ function App() {
   }, []);
 
   const handleOptionClick = value  => {
-    setSelectedDog(value);
+    setSelected(value);
     setIsDropdownOpen(false);
   };
 
   return (
     <AppContainer>
       <Header
-        selectedDog={selectedDog}
+        selected={selected}
         allDogs={allDogs}
         isDropdownOpen={isDropdownOpen}
         dropdownRef={dropdownRef}
@@ -57,7 +57,7 @@ function App() {
       />
       <RootContainer
         years={years}
-        selectedDog={selectedDog}
+        selected={selected}
         allDogs={allDogs}
       />
       <Footer />  

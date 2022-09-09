@@ -17,7 +17,7 @@ const Container = styled.div`
 const TextContainer = ({ children, style }) => {
   return (
     <Container style={style}>
-      <p>{children}</p>
+      {children}
     </Container>
   )
 }

@@ -47,7 +47,7 @@ const DogChart = ({ years, dogRating }) => {
   useEffect(() => {
     let copyDataRating = [...dogRating];
     setRating(copyDataRating);
-    console.log('dog updated in child', dogRating);
+    // console.log('dog updated in child', dogRating);
   }, [dogRating]);
 
   useEffect(() => {

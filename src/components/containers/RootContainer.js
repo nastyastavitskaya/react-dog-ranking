@@ -13,7 +13,7 @@ const Root = styled.main`
 
 const RootContainer = ({
   years,
-  selectedDog,
+  selected,
   allDogs,
 }) => {
   
@@ -31,14 +31,14 @@ const RootContainer = ({
           </p>
         </TextContainer>
 
-        {selectedDog && (
+        {selected.dog && (
           <DogsContainer
-            selectedDog={selectedDog}
+            selectedDog={selected.dog}
             years={years}
           />
         )}
         
-        {!selectedDog && (
+        {selected.isAllSelected && !selected.dog && (
           <AllDogsContainer
             allDogs={allDogs}
             years={years}
