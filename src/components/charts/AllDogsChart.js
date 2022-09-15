@@ -16,6 +16,9 @@ const AllDogsChart = ({ allDogs, years }) => {
     title: {
       text: ''
     },
+    credits: {
+      enabled: false
+    },
     xAxis: {
       categories: years,   
     },
@@ -35,7 +38,7 @@ const AllDogsChart = ({ allDogs, years }) => {
       shared: true,
       useHTML: true,
       formatter: function () {
-        let self = this;
+        const self = this;
         let formattedString = "<small></small><table>";
         self.points.forEach((elem) => {
           formattedString +=

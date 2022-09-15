@@ -11,6 +11,9 @@ const DogChart = ({ years, dogRating }) => {
     title: {
       text: ''
     },
+    credits: {
+      enabled: false
+    },
     xAxis: {
       categories: years,   
     },
@@ -45,7 +48,7 @@ const DogChart = ({ years, dogRating }) => {
   });
 
   useEffect(() => {
-    let copyDataRating = [...dogRating];
+    const copyDataRating = [...dogRating];
     setRating(copyDataRating);
     // console.log('dog updated in child', dogRating);
   }, [dogRating]);
