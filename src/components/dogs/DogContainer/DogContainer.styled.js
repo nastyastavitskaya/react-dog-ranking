@@ -5,8 +5,8 @@ export const Root = styled.div`
   margin: 64px 0px 80px;
   display: flex;
   justify-content: space-between;
-  flex-direction: row;   
-
+  flex-direction: row;
+ 
   ${mediaQueryTablet} {
     flex-direction: column;
   }
@@ -33,6 +33,7 @@ export const Container = styled.div`
 export const DogInfoContainer = styled.div`
   min-width: 320px;
   margin-right: 8px;
+  flex-shrink: 0;
 
   ${mediaQueryTablet} {
     min-width: none;
@@ -41,12 +42,14 @@ export const DogInfoContainer = styled.div`
 `;
 
 export const DogChartContainer = styled.div`
-  flex: 1;
   display: block;
   margin-top: 0;
+  flex-grow: 1;
+  overflow: hidden;
 
   ${mediaQueryTablet} {
     margin-top: 40px;
+    max-width: 100%;
   }
 `;
 
