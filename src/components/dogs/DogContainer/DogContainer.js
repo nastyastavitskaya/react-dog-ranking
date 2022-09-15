@@ -11,6 +11,7 @@ import {
 import Card from '../../Card';
 import DogChart from '../../charts/DogChart';
 
+
 const DogsContainer = ({ selectedDog, years }) => {
   return (
     <Root>
