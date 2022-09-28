@@ -14,12 +14,16 @@ const Container = styled.div`
 `;
 
 
-const TextContainer = ({ children, style }) => {
+const TextContainer: React.FC<IProps> = ({ children }) => {
   return (
-    <Container style={style}>
+    <Container>
       {children}
     </Container>
   )
-}
+};
+
+type IProps = {
+  children: React.ReactNode;
+};
 
 export default TextContainer;

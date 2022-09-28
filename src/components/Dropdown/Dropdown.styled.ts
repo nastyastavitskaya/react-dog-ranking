@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+type IProps = {
+  isDropdownOpen: boolean;
+}
+
 export const Root = styled.div`
   min-width: 200px;
   position: relative;
@@ -7,7 +11,7 @@ export const Root = styled.div`
   z-index: 9000;
 `;
 
-export const DropdownContainer = styled.button`
+export const DropdownContainer = styled.button<IProps>`
   /* position: relative; */
   display: flex;
   flex-direction: row;

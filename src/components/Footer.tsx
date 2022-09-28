@@ -29,7 +29,7 @@ const Link = styled.a`
   }
 `;
 
-const Footer = () => {
+const Footer:React.FC = () => {
   const today = new Date();
 
   return (
@@ -42,7 +42,7 @@ const Footer = () => {
               href='https://www.akc.org/most-popular-breeds/'
               target='_blank'
               rel='noreferrer'
-            >
+            > 
               American Kennel Club
             </Link>
           </Text>

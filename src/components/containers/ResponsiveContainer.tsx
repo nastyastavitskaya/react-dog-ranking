@@ -27,10 +27,15 @@ const Root = styled.div`
   }
 `;
 
-const ResponsiveContainer = ({ children }) => {
+
+const ResponsiveContainer:React.FC<IProps> = ({ children }) => {
   return (
     <Root>{children}</Root>
   )
-}
+};
+
+type IProps = {
+  children: React.ReactNode,
+};
 
 export default ResponsiveContainer;

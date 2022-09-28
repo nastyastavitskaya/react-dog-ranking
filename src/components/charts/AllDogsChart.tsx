@@ -3,8 +3,10 @@ import { useState } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-const AllDogsChart = ({ allDogs, years }) => {
-  let result = [];
+import { IState as Props } from '../../App';
+
+const AllDogsChart: React.FC<IProps> = ({ allDogs, years }) => {
+  let result: any[] = [];
     
   [...allDogs].map(dog => {
     const newItemObj = { name: dog.name, data: dog.rating };
@@ -72,6 +74,12 @@ const AllDogsChart = ({ allDogs, years }) => {
       options={chartOptions}
     />
   )
-}
+};
+
+type IProps = {
+  allDogs: Props["dogs"];
+  years: Props["years"];
+};
+
 
 export default AllDogsChart;

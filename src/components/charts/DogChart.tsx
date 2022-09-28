@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
+import { IState as Props, Dog } from '../../App';
 
 const DogChart = ({ years, dogRating }) => {
   const [rating, setRating] = useState([]);
@@ -53,12 +54,15 @@ const DogChart = ({ years, dogRating }) => {
     // console.log('dog updated in child', dogRating);
   }, [dogRating]);
 
+
   useEffect(() => {
-    setChartOptions({
-      series: [
-        { data: rating }
-      ]
-    });
+    const newLineData = [{
+      name: 'Rank',
+      colorByPoint: true,
+      data: rating,
+    }];
+    const newOptions = { ...chartOptions, series: newLineData };
+    setChartOptions(newOptions);
   }, [rating]);
 
   return (
@@ -68,6 +72,11 @@ const DogChart = ({ years, dogRating }) => {
       options={chartOptions}
     />
   )
-}
+};
+
+type IProps = {
+  years: Props["years"];
+  dogRating?: Dog["rating"];
+};
 
 export default DogChart;

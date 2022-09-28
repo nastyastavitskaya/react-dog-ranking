@@ -11,8 +11,9 @@ import {
 import Card from '../../Card';
 import DogChart from '../../charts/DogChart';
 
+import { IState as Props, Dog } from '../../../App';
 
-const DogsContainer = ({ selectedDog, years }) => {
+const DogsContainer: React.FC<IProps> = ({ selectedDog, years }) => {
   return (
     <Root>
       <DogInfoContainer>
@@ -42,6 +43,12 @@ const DogsContainer = ({ selectedDog, years }) => {
       </DogChartContainer>
     </Root>
   )
-}
+};
+
+
+type IProps = {
+  years: Props["years"];
+  selectedDog?: Dog;
+};
 
 export default DogsContainer;

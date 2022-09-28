@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import Header from './components/Header/Header';
@@ -16,20 +16,38 @@ const AppContainer = styled.div`
   min-height: 100vh;
 `;
 
+export type Dog = {
+  id?: number;
+  [name: string]: any;
+  img?: string;
+  rating?: number[];
+};
+
+export interface IState {
+  selected: {
+    dog?: Dog;
+    isAllSelected: boolean;
+  };
+  dogs: Dog[];
+  years: number[];
+};
+
 function App() {
-  const years = [2013, 2015, 2017, 2019, 2021];
-  const allDogs = dogs;
+  const years: IState["years"] = [2013, 2015, 2017, 2019, 2021];
+  const allDogs: IState["dogs"] = dogs;
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selected, setSelected] = useState({ dog: '', isAllSelected: true })
+  const [selected, setSelected] = useState<IState["selected"]>({ dog: { name: '' }, isAllSelected: true })
 
-  const dropdownRef = useRef();
+  const dropdownRef = useRef<HTMLBodyElement>(null);
 
   useEffect(() => {
-    const onBodyClick = e => {
-      if (dropdownRef.current.contains(e.target)) {
+    const onBodyClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (dropdownRef.current && dropdownRef.current.contains(target)) {
         return;
       }
+      
       setIsDropdownOpen(false);
     }
 
@@ -40,7 +58,7 @@ function App() {
     }
   }, []);
 
-  const handleOptionClick = value  => {
+  const handleOptionClick = (value: any)  => {
     setSelected(value);
     setIsDropdownOpen(false);
   };
@@ -66,3 +84,4 @@ function App() {
 }
 
 export default App;
+ 

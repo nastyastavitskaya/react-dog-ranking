@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { BiChevronDown } from 'react-icons/bi';
 
 import {
@@ -10,12 +9,13 @@ import {
 } from './Dropdown.styled';
 
 
-const Dropdown = ({
-  isDropdownOpen,
-  dropdownRef,
-  label,
+const Dropdown: React.FC<IProps> = ({
+  label = 'select',
+  selectedText = '',
   children,
-  onDropdownClick
+  dropdownRef,
+  isDropdownOpen,
+  onDropdownClick,
 }) => {
   return (
     <Root ref={dropdownRef}>
@@ -34,18 +34,17 @@ const Dropdown = ({
         </DropdownListContainer>
       )}
     </Root>
-  )
+  );
 }
 
-Dropdown.propTypes = {
-  isDropdownOpen: PropTypes.bool,
-  label: PropTypes.string,
-  onDropdownClick: PropTypes.func.isRequired,
-};
 
-Dropdown.defaultProps = {
-  isDropdownOpen: false,
-  label: 'Select',
+type IProps = {
+  label?: string;
+  selectedText?: string;
+  isDropdownOpen: boolean;
+  dropdownRef: any;
+  children?: React.ReactNode;
+  onDropdownClick: () => void;
 };
 
 export default Dropdown;

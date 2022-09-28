@@ -9,12 +9,17 @@ const CardContainer = styled.div`
   border: 1px solid #edf0f4;
 `;
 
-const Card = ({ children, style }) => {
+const Card:React.FC<IProps> = ({ children, style }) => {
   return (
     <CardContainer style={style}>
       {children}
     </CardContainer>
   )
-}
+};
+
+type IProps = {
+  children?: React.ReactNode,
+  style?: React.CSSProperties,
+};
 
 export default Card;
